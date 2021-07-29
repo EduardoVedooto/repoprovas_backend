@@ -1,1 +1,1 @@
-export default function func() { console.log('TEST'); }
+export default function func(): string { return 'TEST' }
