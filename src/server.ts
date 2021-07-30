@@ -1,10 +1,11 @@
+import 'reflect-metadata';
 import func from '@controllers/func';
 import express, { Request, Response } from 'express';
 
 const app = express();
 
 app.get('/', (req: Request, res: Response) => {
-  console.log(func);
+  console.log(`${func} teste`);
   res.sendStatus(501).end();
 });
 

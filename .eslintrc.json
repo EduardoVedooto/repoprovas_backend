@@ -1,46 +1,45 @@
 {
-    "env": {
-        "es2021": true,
-        "node": true,
-        "jest": true
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/extensions": "off",
+    "no-console": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
     },
-    "extends": [
-        "airbnb-base",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:import/typescript",
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint",
-        "import"
-    ],
-    "settings": {
-        "import/resolver": {
-            "typescript": {
-                "directory": "packages/server/*/tsconfig.json"
-            }
-        }
-    },
-    "rules": {
-        "no-console": "off",
-        "import/extensions": [
-            "error",
-            "never",
-            {
-                "js": "always"
-            }
-        ],
-        "import/no-unresolved": [
-            0,
-            {
-                "commonjs": true,
-                "amd": true
-            }
-        ]
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+
+        // Choose from one of the "project" configs below or omit to use <root>/tsconfig.json by default
+
+        // use <root>/path/to/folder/tsconfig.json
+        "project": "./tsconfig.json"
+      }
     }
+  }
 }
