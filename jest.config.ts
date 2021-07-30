@@ -7,5 +7,5 @@ export default {
   testEnvironment: 'jest-environment-node',
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: '<rootDir>',
-  })
+  }),
 };
