@@ -26,7 +26,9 @@
     "prettier/prettier": "error",
     "import/extensions": "off",
     "no-console": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
+    "import/no-cycle": 0,
+    "import/prefer-default-export": 0
   },
   "settings": {
     "import/parsers": {

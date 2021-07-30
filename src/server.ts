@@ -1,15 +1,9 @@
-import 'reflect-metadata';
-import func from '@controllers/func';
-import express, { Request, Response } from 'express';
-import { createConnection } from 'typeorm';
+import './setup';
 
-const app = express();
+import app, { init } from './app';
 
-app.get('/', (req: Request, res: Response) => {
-  console.log(`${func} teste`);
-  res.sendStatus(501).end();
+const port = process.env.PORT || 4000;
+
+init().then(() => {
+  app.listen(port, () => console.info(`server running on port ${port} \norm: ${process.env.TYPEORM_URL}`));
 });
-
-createConnection();
-
-app.listen(4000, () => console.info('Server running on port 4000'));
