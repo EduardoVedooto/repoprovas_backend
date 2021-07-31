@@ -28,7 +28,8 @@
     "no-console": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
     "import/no-cycle": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "class-methods-use-this": [2, { "exceptMethods": ["up", "down"] }]
   },
   "settings": {
     "import/parsers": {

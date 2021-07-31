@@ -29,7 +29,7 @@
   "include": [
     "src/**/*",
     "**/*.test.ts"
-  ],
+, "entities"  ],
   "exclude": [
     "node_modules",
     "dist"
