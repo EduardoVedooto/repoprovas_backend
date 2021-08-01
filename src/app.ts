@@ -1,17 +1,10 @@
-import 'reflect-metadata';
-import func from '@controllers/func';
-import express, { Request, Response } from 'express';
-import { createConnection } from 'typeorm';
+import express from 'express';
+import subjectRouter from 'src/routes/subjects';
+import cors from 'cors';
 
-const app = express();
+export const app = express();
 
-app.get('/', (req: Request, res: Response) => {
-  console.log(`${func} teste`);
-  res.sendStatus(501).end();
-});
+app.use(express.json());
+app.use(cors());
 
-export async function init(): Promise<void> {
-  await createConnection();
-}
-
-export default app;
+app.use(subjectRouter);

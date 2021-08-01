@@ -1,14 +1,10 @@
-require('dotenv');
+require('./src/setup');
 
 module.exports = {
   type: 'postgres',
-  url: process.env.DB_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
   synchronize: false,
   logging: false,
-  entities: ['./dist/entities/*.js'],
+  entities: [`${process.env.NODE_ENV === 'production' ? 'dist' : 'src'}/entities/*.*`],
   migrations: ['./dist/migrations/*.js'],
   subscribers: ['./dist/subscribers/*.js'],
   cli: {

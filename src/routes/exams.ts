@@ -1,6 +1,6 @@
-import express from 'express';
-import * as controller from '@controllers/examsController';
+// import express from 'express';
+// import * as controller from '@controllers/examsController';
 
-const router = express.Router();
+// const router = express.Router();
 
-router.post('/exams/new', controller.insert);
+// router.post('/exams/new', controller.insert);

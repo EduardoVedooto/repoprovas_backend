@@ -3,7 +3,7 @@ import { Categories } from './Categories';
 
 @Entity()
 export class Exams {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn()
   id: string;
 
   @Column()
