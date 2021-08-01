@@ -1,4 +1,3 @@
-// import { ISubject } from '@interface/Subjects';
 import { Subjects } from 'src/entities/Subjects';
 import { getRepository } from 'typeorm';
 
